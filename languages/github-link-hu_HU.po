@@ -20,12 +20,12 @@ msgstr ""
 
 #: github-link.php:71
 msgid "Visit GitHub repository"
-msgstr ""
+msgstr "Ugrás a GitHub tárolóba"
 
 #: github-link.php:94
 msgid "Visit Bitbucket repository"
-msgstr ""
+msgstr "Ugrás a Bitbucket tárolóba"
 
 #. Description of the plugin/theme
 msgid "Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header."
-msgstr ""
+msgstr "Megjeleníti a bővítmény GitHub hivatkozását, ha van benne <code>GitHub Plugin URI</code> fejléc."
