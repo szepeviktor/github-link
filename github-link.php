@@ -7,8 +7,13 @@ Description: Displays GitHub link on the Plugins page given there is a <code>Git
 License: The MIT License (MIT)
 Author: Viktor Szépe
 Author URI: http://www.online1.hu/webdesign/
+Domain Path:       /languages
+Text Domain:       github-link
 GitHub Plugin URI: https://github.com/szepeviktor/github-link
 */
+
+// Load textdomain
+load_plugin_textdomain( 'github-link', false, __DIR__ . '/languages' );
 
 if ( ! function_exists( 'add_filter' ) ) {
     error_log( 'Malicious sign detected: wpf2b_direct_access '
@@ -63,7 +68,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         $new_action = array ('github' => sprintf(
             $link_template,
             $plugin_data["GitHub Plugin URI"],
-            "Visit GitHub repository",
+            __( "Visit GitHub repository" , "github-link" ),
             plugins_url( $icon, __FILE__ ),
             "GitHub",
             $branch
@@ -86,7 +91,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         $new_action = array('bitbucket' => sprintf(
             $link_template,
             $plugin_data["Bitbucket URI"],
-            "Visit Bitbucket repository",
+            __( "Visit Bitbucket repository" , "github-link" ),
             plugins_url( $icon, __FILE__ ),
             "Bitbucket",
             $branch
