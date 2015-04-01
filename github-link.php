@@ -27,6 +27,7 @@ if ( ! function_exists( 'add_filter' ) ) {
 
 add_filter( "extra_plugin_headers", "GHL_extra_headers" );
 add_filter( "plugin_action_links", "GHL_plugin_link", 10, 4 );
+add_filter( "network_admin_plugin_action_links", "GHL_plugin_link", 10, 4 );
 
 function GHL_extra_headers( $extra_headers ) {
 
