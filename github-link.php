@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: GitHub Link
-Version: 0.3.0
-Plugin URI: https://github.com/szepeviktor/github-link
-Description: Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header.
-License: The MIT License (MIT)
-Author: Viktor Szépe
-Author URI: http://www.online1.hu/webdesign/
+Plugin Name:       GitHub Link
+Version:           0.4.0
+Plugin URI:        https://github.com/szepeviktor/github-link
+Description:       Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header.
+License:           The MIT License (MIT)
+Author:            Viktor Szépe
+Author URI:        http://www.online1.hu/webdesign/
 Domain Path:       /languages
 Text Domain:       github-link
 GitHub Plugin URI: https://github.com/szepeviktor/github-link
@@ -48,14 +48,16 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         return $actions;
 
     $link_template = '<a href="%s" title="%s" target="_blank"><img src="%s" style="vertical-align:-3px" height="16" width="16" alt="%s" />%s</a>';
+    $wp_link_template = '<a href="%s" title="%s" target="_blank"><span style="color:#2880A8;font-size:16px;height:16px;vertical-align:-3px" class="dashicons dashicons-wordpress"></span></a>';
 
     $on_wporg = false;
     _maybe_update_plugins();
     $plugin_state = get_site_transient( 'update_plugins' );
-    if ( isset( $plugin_state->response[$plugin_file] )
-        || isset( $plugin_state->no_update[$plugin_file] )
-    )
+    if ( isset( $plugin_state->response[ $plugin_file ] )
+        || isset( $plugin_state->no_update[ $plugin_file ] )
+    ) {
         $on_wporg = true;
+    }
 
     if ( ! empty( $plugin_data["GitHub Plugin URI"] ) ) {
         $icon = "icon/GitHub-Mark-32px.png";
@@ -66,7 +68,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         if ( ! empty( $plugin_data["GitHub Branch"] ) )
             $branch = '/' . $plugin_data["GitHub Branch"];
 
-        $new_action = array ('github' => sprintf(
+        $new_action = array ( 'github' => sprintf(
             $link_template,
             $plugin_data["GitHub Plugin URI"],
             __( "Visit GitHub repository" , "github-link" ),
@@ -89,7 +91,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         if ( ! empty( $plugin_data["Bitbucket Branch"] ) )
             $branch = '/' . $plugin_data["Bitbucket Branch"];
 
-        $new_action = array('bitbucket' => sprintf(
+        $new_action = array( 'bitbucket' => sprintf(
             $link_template,
             $plugin_data["Bitbucket URI"],
             __( "Visit Bitbucket repository" , "github-link" ),
@@ -103,6 +105,25 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         } else {
             $actions = array_merge( $new_action, $actions );
         }
+    }
+
+    if ( $on_wporg ) {
+        if ( isset( $plugin_state->response[ $plugin_file ] ) ) {
+            if ( property_exists( $plugin_state->response[ $plugin_file ], 'url' ) ) {
+                $plugin_uri = $plugin_state->response[ $plugin_file ]->url;
+            }
+        } elseif ( isset( $plugin_state->no_update[ $plugin_file ] ) ) {
+            if ( property_exists( $plugin_state->no_update[ $plugin_file ], 'url' ) ) {
+                $plugin_uri = $plugin_state->no_update[ $plugin_file ]->url;
+            }
+        }
+
+        $new_action = array( 'wordpress_org' => sprintf(
+            $wp_link_template,
+            $plugin_uri,
+            __( "Visit WordPress.org Plugin Page" , "github-link" )
+        ) );
+        $actions = array_merge( $new_action, $actions );
     }
 
     return $actions;
