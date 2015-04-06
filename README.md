@@ -19,8 +19,7 @@ the GitHub icon is displayed **after** other plugin actions (links), otherwise i
 
 ### WordPress.org headers
 
-- `Plugin URI` shown as a WordPress logo when the plugin is on WordPress.org ![WordPress logo](icon/wordpress-logo-32-blue.png)
-<!-- https://s.w.org/about/images/logos/wordpress-logo-32-blue.png -->
+- `Plugin URI` shown as a WordPress logo when the plugin is on WordPress.org ![https://s.w.org/about/images/logos/wordpress-logo-32-blue.png](icon/wordpress-logo-32-blue.png)
 
 ### Related Information
 
