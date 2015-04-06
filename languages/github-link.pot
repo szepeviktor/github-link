@@ -26,6 +26,10 @@ msgstr ""
 msgid "Visit Bitbucket repository"
 msgstr ""
 
+#: github-link.php:124
+msgid "Visit WordPress.org Plugin Page"
+msgstr ""
+
 #. Description of the plugin/theme
 msgid "Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header."
 msgstr ""

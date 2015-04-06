@@ -1,5 +1,9 @@
-Add to end of POT
+Add to the end of POT
 
 #. Description of the plugin/theme
 msgid "Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header."
 msgstr ""
+
+Generate MO files on POSIX console
+
+for PO in *.po;do msgfmt -o "${PO%.po}.mo" "$PO";done

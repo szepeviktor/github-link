@@ -26,6 +26,10 @@ msgstr "Visitar o repositório do GitHub"
 msgid "Visit Bitbucket repository"
 msgstr "Visitar o repositório do Bitbucket"
 
+#: github-link.php:124
+msgid "Visit WordPress.org Plugin Page"
+msgstr "Visitar WordPress.org Plugin página"
+
 #. Description of the plugin/theme
 msgid ""
 "Displays GitHub link on the Plugins page given there is a <code>GitHub "
