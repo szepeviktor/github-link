@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name:       GitHub Link
-Version:           0.4.0
+Version:           0.4.1
 Plugin URI:        https://github.com/szepeviktor/github-link
 Description:       Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header.
 License:           The MIT License (MIT)
@@ -118,12 +118,15 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
             }
         }
 
-        $new_action = array( 'wordpress_org' => sprintf(
-            $wp_link_template,
-            $plugin_uri,
-            __( "Visit WordPress.org Plugin Page" , "github-link" )
-        ) );
-        $actions = array_merge( $new_action, $actions );
+        // GHU also sets plugin->url
+        if ( false !== strstr( $plugin_uri, '//wordpress.org/plugins/' ) ) {
+            $new_action = array( 'wordpress_org' => sprintf(
+                $wp_link_template,
+                $plugin_uri,
+                __( "Visit WordPress.org Plugin Page" , "github-link" )
+            ) );
+            $actions = array_merge( $new_action, $actions );
+        }
     }
 
     return $actions;
