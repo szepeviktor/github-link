@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GitHub Link\n"
 "POT-Creation-Date: 2015-03-19 00:27-0000\n"
-"PO-Revision-Date: 2015-03-19 00:30-0000\n"
+"PO-Revision-Date: 2015-04-06 20:06-0000\n"
 "Last-Translator: Pedro Mendonça <ped.gaspar@gmail.com>\n"
 "Language-Team: Pedro Mendonça <ped.gaspar@gmail.com>\n"
 "Language: pt_PT\n"
@@ -20,15 +20,15 @@ msgstr ""
 
 #: github-link.php:71
 msgid "Visit GitHub repository"
-msgstr "Visitar o repositório do GitHub"
+msgstr "Visite o repositório do GitHub"
 
 #: github-link.php:94
 msgid "Visit Bitbucket repository"
-msgstr "Visitar o repositório do Bitbucket"
+msgstr "Visite o repositório do Bitbucket"
 
 #: github-link.php:124
 msgid "Visit WordPress.org Plugin Page"
-msgstr "Visitar WordPress.org Plugin página"
+msgstr "Visite a página do plugin no WordPress.org"
 
 #. Description of the plugin/theme
 msgid ""
