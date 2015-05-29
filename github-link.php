@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name:       GitHub Link
-Version:           0.4.2
+Version:           0.4.3
 Plugin URI:        https://github.com/szepeviktor/github-link
 Description:       Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header.
 License:           The MIT License (MIT)
@@ -16,7 +16,7 @@ GitHub Plugin URI: https://github.com/szepeviktor/github-link
 load_plugin_textdomain( 'github-link', false, __DIR__ . '/languages' );
 
 if ( ! function_exists( 'add_filter' ) ) {
-    error_log( 'Malicious sign detected: wpf2b_direct_access '
+    error_log( 'Malicious traffic detected: github_link_direct_access '
         . addslashes( $_SERVER['REQUEST_URI'] )
     );
     ob_get_level() && ob_end_clean();
