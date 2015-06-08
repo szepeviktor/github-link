@@ -12,9 +12,6 @@ Text Domain:       github-link
 GitHub Plugin URI: https://github.com/szepeviktor/github-link
 */
 
-// Load textdomain
-load_plugin_textdomain( 'github-link', false, __DIR__ . '/languages' );
-
 if ( ! function_exists( 'add_filter' ) ) {
     error_log( 'Malicious traffic detected: github_link_direct_access '
         . addslashes( $_SERVER['REQUEST_URI'] )
@@ -24,6 +21,8 @@ if ( ! function_exists( 'add_filter' ) ) {
     header( 'HTTP/1.0 403 Forbidden' );
     exit();
 }
+
+load_plugin_textdomain( 'github-link', false, dirname( __FILE__ ) . '/languages' );
 
 add_filter( "extra_plugin_headers", "GHL_extra_headers" );
 add_filter( "plugin_action_links", "GHL_plugin_link", 10, 4 );
