@@ -23,6 +23,6 @@ the GitHub icon is displayed **after** other plugin actions (links), otherwise i
 
 ### Related Information
 
-These plugin header enable automatic updates to your GitHub or Bitbucket hosted WordPress
+These plugin headers enable automatic updates to your GitHub or Bitbucket hosted WordPress
 plugins and themes using the [GitHub Updater plugin](https://github.com/afragen/github-updater).
 GitHub Updater is not found on WordPress.org.
