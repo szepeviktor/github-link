@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name:       GitHub Link
-Version:           0.4.3
+Version:           0.4.4
 Plugin URI:        https://github.com/szepeviktor/github-link
 Description:       Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header.
 License:           The MIT License (MIT)
@@ -92,7 +92,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
 
         $new_action = array( 'bitbucket' => sprintf(
             $link_template,
-            $plugin_data["Bitbucket URI"],
+            $plugin_data["Bitbucket Plugin URI"],
             __( "Visit Bitbucket repository" , "github-link" ),
             plugins_url( $icon, __FILE__ ),
             "Bitbucket",
