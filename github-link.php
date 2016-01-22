@@ -35,6 +35,8 @@ function GHL_extra_headers( $extra_headers ) {
         "GitHubURI" => "GitHub Plugin URI",
         "GitHubBranch" => "GitHub Branch",
         "GitHubToken" => "GitHub Access Token",
+        "GitLabURI" => "GitLab Plugin URI",
+        "GitLabBranch" => "GitLab Branch",
         "BitbucketURI" => "Bitbucket Plugin URI",
         "BitbucketBranch" => "Bitbucket Branch"
     ) );
@@ -63,7 +65,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         $branch = '';
 
         if ( ! empty( $plugin_data["GitHub Access Token"] ) )
-            $icon = 'icon/GitHub-Mark-Light-32px.png" style="vertical-align:-3px;background-color:black;border-radius:50%';
+            $icon = 'icon/GitHub-Mark-Private-32px.png"';
         if ( ! empty( $plugin_data["GitHub Branch"] ) )
             $branch = '/' . $plugin_data["GitHub Branch"];
 
@@ -73,6 +75,29 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
             __( "Visit GitHub repository" , "github-link" ),
             plugins_url( $icon, __FILE__ ),
             "GitHub",
+            $branch
+        ) );
+        // If on WP.org + master -> put the icon after other actions.
+        if ( $on_wporg && ( empty( $branch ) || '/master' === $branch ) ) {
+            $actions = array_merge( $actions, $new_action );
+        } else {
+            $actions = array_merge( $new_action, $actions );
+        }
+    }
+
+    if ( ! empty( $plugin_data["GitLab Plugin URI"] ) ) {
+        $icon = "icon/GitLab-Mark-32px.png";
+        $branch = '';
+
+        if ( ! empty( $plugin_data["GitLab Branch"] ) )
+            $branch = '/' . $plugin_data["GitLab Branch"];
+
+        $new_action = array ( 'gitlab' => sprintf(
+            $link_template,
+            $plugin_data["GitLab Plugin URI"],
+            __( "Visit GitLab repository" , "github-link" ),
+            plugins_url( $icon, __FILE__ ),
+            "GitLab",
             $branch
         ) );
         // If on WP.org + master -> put the icon after other actions.
