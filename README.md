@@ -10,7 +10,7 @@ the GitHub icon is displayed **after** other plugin actions (links), otherwise i
 
 - `GitHub Plugin URI` shown as a normal GitHub icon ![GitHub icon](icon/GitHub-Mark-32px.png)
 - `GitHub Branch` shown as text after the GitHub icon
-- `GitHub Access Token` (aka. private repo) shown as an inverted GitHub icon ![GitHub Private icon](icon/README-GitHub-Mark-Private-32px.png)
+- `GitHub Access Token` (aka. private repo) shown as an inverted GitHub icon ![GitHub Private icon](icon/GitHub-Mark-Private-32px.png)
 
 ### GitLab headers
 
