@@ -18,15 +18,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: github-link.php:71
+#: github-link.php:75
 msgid "Visit GitHub repository"
 msgstr ""
 
-#: github-link.php:94
+#: github-link.php:75
+msgid "Visit GitLab repository"
+msgstr ""
+
+#: github-link.php:98
 msgid "Visit Bitbucket repository"
 msgstr ""
 
-#: github-link.php:124
+#: github-link.php:121
 msgid "Visit WordPress.org Plugin Page"
 msgstr ""
 
