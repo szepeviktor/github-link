@@ -6,7 +6,6 @@ Plugin URI:        https://github.com/szepeviktor/github-link
 Description:       Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header.
 License:           The MIT License (MIT)
 Author:            Viktor Szépe
-Author URI:        http://www.online1.hu/webdesign/
 Domain Path:       /languages
 Text Domain:       github-link
 GitHub Plugin URI: https://github.com/szepeviktor/github-link
