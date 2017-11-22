@@ -48,7 +48,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
         return $actions;
 
     $link_template = '<a href="%s" title="%s" target="_blank"><img src="%s" style="width: 16px; height: 16px; vertical-align:-3px;" height="16" width="16" alt="%s" />%s</a>';
-    $wp_link_template = '<a href="%s" title="%s" target="_blank"><span style="color:#2880A8;font-size:16px;height:16px;vertical-align:-3px" class="dashicons dashicons-wordpress"></span></a>';
+    $wp_link_template = '<a href="%s" title="%s" target="_blank"><span style="width: 16px; height: 16px; color:#2880A8; font-size:16px; vertical-align:-3px;" class="dashicons dashicons-wordpress"></span></a>';
 
     $on_wporg = false;
     _maybe_update_plugins();
