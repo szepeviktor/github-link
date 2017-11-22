@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name:       GitHub Link
-Version:           0.4.4
+Version:           0.4.5
 Plugin URI:        https://github.com/szepeviktor/github-link
 Description:       Displays GitHub link on the Plugins page given there is a <code>GitHub Plugin URI</code> plugin header.
 License:           The MIT License (MIT)
@@ -47,7 +47,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
     if ( 'search' === $context )
         return $actions;
 
-    $link_template = '<a href="%s" title="%s" target="_blank"><img src="%s" style="vertical-align:-3px" height="16" width="16" alt="%s" />%s</a>';
+    $link_template = '<a href="%s" title="%s" target="_blank"><img src="%s" style="width: 16px; height: 16px; vertical-align:-3px;" height="16" width="16" alt="%s" />%s</a>';
     $wp_link_template = '<a href="%s" title="%s" target="_blank"><span style="color:#2880A8;font-size:16px;height:16px;vertical-align:-3px" class="dashicons dashicons-wordpress"></span></a>';
 
     $on_wporg = false;
