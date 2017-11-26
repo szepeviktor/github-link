@@ -159,7 +159,7 @@ function GHL_plugin_link( $actions, $plugin_file, $plugin_data, $context ) {
 
 /**
  * In WordPress 4.9, core introduced icons next to plugin on the update-code.php
- * page. This adds a new font-size to the psudo :before of 60px. This CSS line
+ * page. This adds a new font-size to the pseudo :before of 60px. This CSS line
  * fixes it for the plugin.php page.
  */
 function GHL_wp49_css_fix() {
